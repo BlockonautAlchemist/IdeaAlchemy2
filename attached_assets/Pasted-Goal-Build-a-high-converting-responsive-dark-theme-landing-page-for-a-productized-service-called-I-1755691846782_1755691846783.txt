@@ -1,0 +1,105 @@
+Goal: Build a high-converting, responsive dark-theme landing page for a productized service called IdeaAlchemy. Speak in “we” voice. The service: We help founders go from idea to working AI-powered prototype in under a week. We deliver the MVP plus a detailed playbook to continue or hand off, including tool recommendations and next steps.
+
+⸻
+
+Tech Requirements
+	•	Stack: Next.js + Tailwind CSS (preferred) or HTML5 + Tailwind.
+	•	Design: Dark, modern, sleek, with mystical/alchemy-inspired accents.
+	•	Performance: Mobile-first, lazy-load images, fast load.
+	•	Accessibility: Semantic HTML, high-contrast dark mode (AA+).
+	•	SEO: Title, description, Open Graph, Twitter cards, JSON-LD schema.
+	•	Forms: Idea Intake Form with validation, placeholder endpoint, success/error states.
+	•	Analytics hooks: data-analytics attributes on CTAs.
+
+⸻
+
+Branding
+	•	Brand Name: IdeaAlchemy
+	•	Theme: Alchemy + transformation (turning ideas into gold).
+	•	Color Palette:
+	•	Background: #0B0B12 (deep dark violet/black)
+	•	Foreground/Text: #F5F5F7 (off-white)
+	•	Primary Accent: #FED66D (gold, evokes alchemy/gold-making)
+	•	Secondary Accent: #AD19D1 (mystical purple)
+	•	Tertiary Accent: #5CFBF7 (aqua glow)
+	•	Typography: Inter for UI; Playfair Display or similar serif for headings (alchemy/mystical vibe).
+
+⸻
+
+Page Structure & Copy
+	1.	Header / Nav (sticky)
+	•	Left: “IdeaAlchemy” wordmark.
+	•	Right nav: Features, How It Works, Pricing, FAQ, Contact.
+	•	Primary CTA button: “Start Your Prototype” (gold accent).
+	2.	Hero Section
+	•	Dark gradient background with faint mystical geometric pattern (alchemy circles, glyphs).
+	•	H1: From Idea to Prototype in Under a Week
+	•	Subhead: We turn your vision into a working AI-powered MVP—fast, affordable, and complete with the playbook to take it further.
+	•	CTA: [Start Your Prototype] (gold)
+	•	Secondary CTA: [See How It Works] (outline, aqua).
+	•	Subtext: “Founder-friendly • Fixed price • No lock-in.”
+	3.	Alchemy Outcomes Bar (3–4 highlights)
+	•	“Transform ideas into gold”
+	•	“Demo-ready in days”
+	•	“Own the code + playbook”
+	•	“Clarity on next steps”
+	4.	How It Works (3 steps with icons styled like alchemy glyphs)
+	•	1) Share Your Vision – Fill out our guided form.
+	•	2) We Build the Prototype – AI-powered MVP in days.
+	•	3) You Own the Playbook – Complete build guide + next steps.
+	5.	What You’ll Receive (cards)
+	•	A Working AI-Powered MVP
+	•	The Alchemist’s Playbook (step-by-step instructions)
+	•	Tool & Service Recommendations
+	•	A Clear Roadmap to Completion
+	6.	Why Choose IdeaAlchemy (value props)
+	•	Speed That Matters — tangible in under 7 days.
+	•	Affordable Validation — test before investing big.
+	•	Clarity & Control — you own the prototype + knowledge.
+	•	No Lock-In — we give you the recipe, not just the result.
+	7.	Pricing
+	•	Prototype Package – $499
+	•	One AI-powered MVP (no revisions)
+	•	Alchemist’s Playbook & documentation
+	•	Recommendations + next steps
+	•	Pro Package – $899
+	•	Everything above
+	•	One revision
+	•	30-min walkthrough call
+	•	Priority delivery
+	•	CTA under each: [Start Your Prototype]
+	8.	FAQ (accordion)
+	•	What counts as an MVP?
+	•	Do I own the code?
+	•	Why no revisions in base plan?
+	•	Can you help finish it?
+	•	Refunds?
+	9.	Testimonials (future)
+	•	Placeholder quote cards styled like illuminated manuscripts or gold-framed boxes.
+	10.	Final CTA Band
+
+	•	H2: Ready to Turn Your Idea Into Gold?
+	•	CTA: [Start Your Prototype] (large, gold glowing).
+	•	Subtext: Submit your idea—no obligation. We’ll confirm scope before work begins.
+
+	11.	Footer
+
+	•	Links: Contact | Privacy | Terms
+	•	Email: contact@ideaalchemy.com
+	•	Tagline: “Where ideas are transmuted into reality.”
+
+⸻
+
+Extra Design Details
+	•	Background: deep violet/black with faint alchemical glyphs (SVGs, low opacity).
+	•	Cards: dark gray with subtle glowing gold border on hover.
+	•	Buttons: gold gradient with hover glow; secondary = aqua outline.
+	•	Section dividers: subtle gradient “energy lines” instead of hard breaks.
+
+⸻
+
+Deliverables:
+	•	Fully responsive dark-mode landing page.
+	•	Accessible, SEO-optimized, deployable on Vercel.
+	•	Intake form functional (placeholder backend).
+	•	README in comments explaining how to change branding, colors, and prices.
