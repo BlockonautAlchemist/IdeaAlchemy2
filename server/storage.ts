@@ -38,7 +38,9 @@ export class MemStorage implements IStorage {
   async createIdeaSubmission(insertSubmission: InsertIdeaSubmission): Promise<IdeaSubmission> {
     const id = randomUUID();
     const submission: IdeaSubmission = { 
-      ...insertSubmission, 
+      ...insertSubmission,
+      aiType: insertSubmission.aiType || null,
+      additional: insertSubmission.additional || null,
       id,
       createdAt: new Date()
     };

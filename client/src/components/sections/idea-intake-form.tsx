@@ -158,7 +158,7 @@ export default function IdeaIntakeForm() {
                 render={({ field }) => (
                   <FormItem>
                     <FormLabel className="text-sm font-medium text-foreground">What type of AI integration interests you?</FormLabel>
-                    <Select onValueChange={field.onChange} defaultValue={field.value}>
+                    <Select onValueChange={field.onChange} defaultValue={field.value || ""}>
                       <FormControl>
                         <SelectTrigger className="bg-background border-border-subtle form-input" data-testid="select-ai-type">
                           <SelectValue placeholder="Select an option..." />
@@ -251,7 +251,8 @@ export default function IdeaIntakeForm() {
                         className="bg-background border-border-subtle form-input resize-y"
                         rows={3}
                         data-testid="textarea-additional"
-                        {...field} 
+                        {...field}
+                        value={field.value || ""} 
                       />
                     </FormControl>
                     <FormMessage />

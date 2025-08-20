@@ -1,15 +1,15 @@
-import Header from "@/components/sections/header";
-import Hero from "@/components/sections/hero";
-import AlchemyOutcomes from "@/components/sections/alchemy-outcomes";
-import HowItWorks from "@/components/sections/how-it-works";
-import WhatYouReceive from "@/components/sections/what-you-receive";
-import WhyChoose from "@/components/sections/why-choose";
-import Pricing from "@/components/sections/pricing";
-import FAQ from "@/components/sections/faq";
-import Testimonials from "@/components/sections/testimonials";
-import IdeaIntakeForm from "@/components/sections/idea-intake-form";
-import FinalCTA from "@/components/sections/final-cta";
-import Footer from "@/components/sections/footer";
+import Header from "../components/sections/header";
+import Hero from "../components/sections/hero";
+import AlchemyOutcomes from "../components/sections/alchemy-outcomes";
+import HowItWorks from "../components/sections/how-it-works";
+import WhatYouReceive from "../components/sections/what-you-receive";
+import WhyChoose from "../components/sections/why-choose";
+import Pricing from "../components/sections/pricing";
+import FAQ from "../components/sections/faq";
+import Testimonials from "../components/sections/testimonials";
+import IdeaIntakeForm from "../components/sections/idea-intake-form";
+import FinalCTA from "../components/sections/final-cta";
+import Footer from "../components/sections/footer";
 
 export default function Home() {
   return (
