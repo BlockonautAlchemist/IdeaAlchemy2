@@ -1,0 +1,1210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IdeaAlchemy - From Idea to AI-Powered Prototype in Under a Week</title>
+    <meta name="description" content="Transform your vision into a working AI-powered MVP in under 7 days. Complete with playbook, code ownership, and next steps. Fixed price, no lock-in.">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ideaalchemy.com/">
+    <meta property="og:title" content="IdeaAlchemy - From Idea to AI-Powered Prototype in Under a Week">
+    <meta property="og:description" content="Transform your vision into a working AI-powered MVP in under 7 days. Complete with playbook, code ownership, and next steps.">
+    <meta property="og:image" content="https://ideaalchemy.com/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://ideaalchemy.com/">
+    <meta property="twitter:title" content="IdeaAlchemy - From Idea to AI-Powered Prototype in Under a Week">
+    <meta property="twitter:description" content="Transform your vision into a working AI-powered MVP in under 7 days. Complete with playbook, code ownership, and next steps.">
+    <meta property="twitter:image" content="https://ideaalchemy.com/twitter-image.jpg">
+
+    <!-- JSON-LD Schema -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Service",
+      "name": "IdeaAlchemy",
+      "description": "AI-powered prototype development service that transforms ideas into working MVPs in under a week",
+      "provider": {
+        "@type": "Organization",
+        "name": "IdeaAlchemy"
+      },
+      "offers": [
+        {
+          "@type": "Offer",
+          "name": "Prototype Package",
+          "price": "499",
+          "priceCurrency": "USD"
+        },
+        {
+          "@type": "Offer",
+          "name": "Pro Package",
+          "price": "899",
+          "priceCurrency": "USD"
+        }
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <script>
+    tailwind.config = {
+        theme: {
+            extend: {
+                colors: {
+                    'deep-dark': '#0B0B12',
+                    'off-white': '#F5F5F7',
+                    'gold': '#FED66D',
+                    'mystical-purple': '#AD19D1',
+                    'aqua-glow': '#5CFBF7',
+                    'card-bg': '#1A1A24',
+                    'border-subtle': '#2A2A3A'
+                },
+                fontFamily: {
+                    'inter': ['Inter', 'sans-serif'],
+                    'playfair': ['Playfair Display', 'serif']
+                },
+                backgroundImage: {
+                    'hero-gradient': 'linear-gradient(135deg, #0B0B12 0%, #1A1A24 50%, #0B0B12 100%)',
+                    'gold-gradient': 'linear-gradient(135deg, #FED66D 0%, #F4C430 100%)',
+                    'mystical-gradient': 'linear-gradient(135deg, #AD19D1 0%, #8A2BE2 100%)',
+                    'energy-line': 'linear-gradient(90deg, transparent 0%, #FED66D 50%, transparent 100%)'
+                },
+                animation: {
+                    'glow': 'glow 2s ease-in-out infinite alternate',
+                    'float': 'float 6s ease-in-out infinite'
+                },
+                keyframes: {
+                    glow: {
+                        '0%': { boxShadow: '0 0 20px rgba(254, 214, 109, 0.3)' },
+                        '100%': { boxShadow: '0 0 30px rgba(254, 214, 109, 0.6)' }
+                    },
+                    float: {
+                        '0%, 100%': { transform: 'translateY(0px)' },
+                        '50%': { transform: 'translateY(-10px)' }
+                    }
+                }
+            }
+        }
+    };
+    </script>
+
+    <style>
+        .alchemy-pattern {
+            background-image: 
+                radial-gradient(circle at 25% 25%, rgba(254, 214, 109, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 75% 75%, rgba(173, 25, 209, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(92, 251, 247, 0.02) 0%, transparent 50%);
+        }
+        
+        .energy-divider {
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, #FED66D 20%, #AD19D1 50%, #5CFBF7 80%, transparent 100%);
+            opacity: 0.6;
+        }
+        
+        .glow-on-hover:hover {
+            box-shadow: 0 0 25px rgba(254, 214, 109, 0.4);
+            transform: translateY(-2px);
+            transition: all 0.3s ease;
+        }
+        
+        .mystical-icon {
+            filter: drop-shadow(0 0 10px rgba(254, 214, 109, 0.3));
+        }
+        
+        .form-input:focus {
+            border-color: #FED66D;
+            box-shadow: 0 0 0 3px rgba(254, 214, 109, 0.1);
+            outline: none;
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        
+        .accordion-content.active {
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body class="bg-deep-dark text-off-white font-inter antialiased overflow-x-hidden">
+    <!-- @COMPONENT: Header [sticky navigation] -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-deep-dark/95 backdrop-blur-sm border-b border-border-subtle">
+        <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-flask text-gold text-2xl mystical-icon"></i>
+                <span class="text-xl font-playfair font-bold text-gold">IdeaAlchemy</span>
+            </div>
+            
+            <div class="hidden lg:flex items-center space-x-8">
+                <a href="#features" class="text-off-white/80 hover:text-gold transition-colors">Features</a>
+                <a href="#how-it-works" class="text-off-white/80 hover:text-gold transition-colors">How It Works</a>
+                <a href="#pricing" class="text-off-white/80 hover:text-gold transition-colors">Pricing</a>
+                <a href="#faq" class="text-off-white/80 hover:text-gold transition-colors">FAQ</a>
+                <a href="#contact" class="text-off-white/80 hover:text-gold transition-colors">Contact</a>
+            </div>
+            
+            <button data-analytics="cta-header-start" class="bg-gold-gradient text-deep-dark px-6 py-2 rounded-lg font-semibold hover:shadow-lg hover:shadow-gold/25 transition-all duration-300 glow-on-hover">
+                Start Your Prototype
+            </button>
+            
+            <!-- Mobile menu button -->
+            <button class="lg:hidden text-gold" id="mobile-menu-btn">
+                <i class="fas fa-bars text-xl"></i>
+            </button>
+        </nav>
+        
+        <!-- Mobile menu -->
+        <div class="lg:hidden hidden bg-card-bg border-t border-border-subtle" id="mobile-menu">
+            <div class="container mx-auto px-4 py-4 space-y-4">
+                <a href="#features" class="block text-off-white/80 hover:text-gold">Features</a>
+                <a href="#how-it-works" class="block text-off-white/80 hover:text-gold">How It Works</a>
+                <a href="#pricing" class="block text-off-white/80 hover:text-gold">Pricing</a>
+                <a href="#faq" class="block text-off-white/80 hover:text-gold">FAQ</a>
+                <a href="#contact" class="block text-off-white/80 hover:text-gold">Contact</a>
+            </div>
+        </div>
+    </header>
+    <!-- @END_COMPONENT: Header -->
+
+    <!-- @COMPONENT: Hero [main hero section] -->
+    <section class="bg-hero-gradient alchemy-pattern pt-24 pb-20 min-h-screen flex items-center">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-4xl mx-auto">
+                <!-- Floating mystical elements -->
+                <div class="absolute top-32 left-10 text-gold/20 text-6xl animate-float hidden lg:block">
+                    <i class="fas fa-atom"></i>
+                </div>
+                <div class="absolute top-48 right-16 text-mystical-purple/20 text-4xl animate-float hidden lg:block" style="animation-delay: 2s;">
+                    <i class="fas fa-magic"></i>
+                </div>
+                
+                <h1 class="text-5xl lg:text-7xl font-playfair font-bold mb-6 leading-tight">
+                    From <span class="text-gold">Idea</span> to <span class="text-aqua-glow">Prototype</span><br>
+                    in Under a Week
+                </h1>
+                
+                <p class="text-xl lg:text-2xl text-off-white/80 mb-8 max-w-3xl mx-auto leading-relaxed">
+                    We turn your vision into a working AI-powered MVP—fast, affordable, and complete with the playbook to take it further.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center mb-12">
+                    <button data-analytics="cta-hero-primary" class="bg-gold-gradient text-deep-dark px-8 py-4 rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-gold/25 transition-all duration-300 animate-glow">
+                        <i class="fas fa-rocket mr-2"></i>
+                        Start Your Prototype
+                    </button>
+                    <button data-analytics="cta-hero-secondary" class="border-2 border-aqua-glow text-aqua-glow px-8 py-4 rounded-xl font-semibold text-lg hover:bg-aqua-glow/10 transition-all duration-300">
+                        <i class="fas fa-play-circle mr-2"></i>
+                        See How It Works
+                    </button>
+                </div>
+                
+                <div class="text-off-white/60 flex flex-wrap justify-center gap-6 text-sm">
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-check-circle text-gold"></i>
+                        Founder-friendly
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-dollar-sign text-gold"></i>
+                        Fixed price
+                    </span>
+                    <span class="flex items-center gap-2">
+                        <i class="fas fa-unlock text-gold"></i>
+                        No lock-in
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Hero -->
+
+    <!-- Energy divider -->
+    <div class="energy-divider"></div>
+
+    <!-- @COMPONENT: AlchemyOutcomes [highlight bar] -->
+    <section class="py-16 bg-card-bg/50">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+                <div class="space-y-4">
+                    <div class="text-gold text-4xl">
+                        <i class="fas fa-magic mystical-icon"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg">Transform Ideas into Gold</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-aqua-glow text-4xl">
+                        <i class="fas fa-rocket mystical-icon"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg">Demo-Ready in Days</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-mystical-purple text-4xl">
+                        <i class="fas fa-code mystical-icon"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg">Own the Code + Playbook</h3>
+                </div>
+                <div class="space-y-4">
+                    <div class="text-gold text-4xl">
+                        <i class="fas fa-map mystical-icon"></i>
+                    </div>
+                    <h3 class="font-semibold text-lg">Clarity on Next Steps</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: AlchemyOutcomes -->
+
+    <!-- Energy divider -->
+    <div class="energy-divider"></div>
+
+    <!-- @COMPONENT: HowItWorks [3-step process] -->
+    <section id="how-it-works" class="py-20 bg-deep-dark">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold mb-6">
+                    The <span class="text-gold">Alchemy</span> Process
+                </h2>
+                <p class="text-xl text-off-white/80 max-w-2xl mx-auto">
+                    Three simple steps to transform your idea into reality
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+                <!-- Step 1 -->
+                <div class="text-center group">
+                    <div class="bg-card-bg rounded-2xl p-8 border border-border-subtle glow-on-hover">
+                        <div class="bg-gold/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-lightbulb text-gold text-3xl mystical-icon"></i>
+                        </div>
+                        <div class="text-gold font-bold text-lg mb-2">Step 1</div>
+                        <h3 class="text-2xl font-playfair font-bold mb-4">Share Your Vision</h3>
+                        <p class="text-off-white/70 leading-relaxed">
+                            Fill out our guided form with your idea details. We'll analyze your vision and confirm the scope before starting.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 2 -->
+                <div class="text-center group">
+                    <div class="bg-card-bg rounded-2xl p-8 border border-border-subtle glow-on-hover">
+                        <div class="bg-mystical-purple/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-cogs text-mystical-purple text-3xl mystical-icon"></i>
+                        </div>
+                        <div class="text-mystical-purple font-bold text-lg mb-2">Step 2</div>
+                        <h3 class="text-2xl font-playfair font-bold mb-4">We Build the Prototype</h3>
+                        <p class="text-off-white/70 leading-relaxed">
+                            Our team creates your AI-powered MVP using cutting-edge tools and proven frameworks. Delivered in under 7 days.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Step 3 -->
+                <div class="text-center group">
+                    <div class="bg-card-bg rounded-2xl p-8 border border-border-subtle glow-on-hover">
+                        <div class="bg-aqua-glow/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                            <i class="fas fa-book text-aqua-glow text-3xl mystical-icon"></i>
+                        </div>
+                        <div class="text-aqua-glow font-bold text-lg mb-2">Step 3</div>
+                        <h3 class="text-2xl font-playfair font-bold mb-4">You Own the Playbook</h3>
+                        <p class="text-off-white/70 leading-relaxed">
+                            Receive complete documentation, source code, and a detailed roadmap to continue development or hand off to your team.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: HowItWorks -->
+
+    <!-- Energy divider -->
+    <div class="energy-divider"></div>
+
+    <!-- @COMPONENT: WhatYouReceive [deliverables cards] -->
+    <section id="features" class="py-20 bg-card-bg/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold mb-6">
+                    What You'll <span class="text-gold">Receive</span>
+                </h2>
+                <p class="text-xl text-off-white/80 max-w-2xl mx-auto">
+                    Everything you need to validate, iterate, and scale your idea
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Deliverable 1 -->
+                <div class="bg-card-bg rounded-2xl p-8 border border-border-subtle glow-on-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gold/10 w-16 h-16 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-mobile-alt text-gold text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-playfair font-bold">A Working AI-Powered MVP</h3>
+                    </div>
+                    <p class="text-off-white/70 leading-relaxed mb-4">
+                        Fully functional prototype showcasing your core features, built with modern frameworks and integrated AI capabilities.
+                    </p>
+                    <ul class="space-y-2 text-sm text-off-white/60">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-gold"></i>
+                            Responsive web application
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-gold"></i>
+                            AI integration where applicable
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-gold"></i>
+                            Demo-ready functionality
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Deliverable 2 -->
+                <div class="bg-card-bg rounded-2xl p-8 border border-border-subtle glow-on-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-mystical-purple/10 w-16 h-16 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-scroll text-mystical-purple text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-playfair font-bold">The Alchemist's Playbook</h3>
+                    </div>
+                    <p class="text-off-white/70 leading-relaxed mb-4">
+                        Comprehensive documentation with step-by-step instructions to understand, modify, and extend your prototype.
+                    </p>
+                    <ul class="space-y-2 text-sm text-off-white/60">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-mystical-purple"></i>
+                            Technical architecture overview
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-mystical-purple"></i>
+                            Code walkthrough and explanations
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-mystical-purple"></i>
+                            Customization guidelines
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Deliverable 3 -->
+                <div class="bg-card-bg rounded-2xl p-8 border border-border-subtle glow-on-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-aqua-glow/10 w-16 h-16 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-tools text-aqua-glow text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-playfair font-bold">Tool & Service Recommendations</h3>
+                    </div>
+                    <p class="text-off-white/70 leading-relaxed mb-4">
+                        Curated list of tools, services, and platforms to help you deploy, scale, and maintain your application.
+                    </p>
+                    <ul class="space-y-2 text-sm text-off-white/60">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-aqua-glow"></i>
+                            Hosting and deployment options
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-aqua-glow"></i>
+                            Third-party integrations
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-aqua-glow"></i>
+                            Cost optimization strategies
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Deliverable 4 -->
+                <div class="bg-card-bg rounded-2xl p-8 border border-border-subtle glow-on-hover">
+                    <div class="flex items-center mb-6">
+                        <div class="bg-gold/10 w-16 h-16 rounded-xl flex items-center justify-center mr-4">
+                            <i class="fas fa-route text-gold text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-playfair font-bold">A Clear Roadmap to Completion</h3>
+                    </div>
+                    <p class="text-off-white/70 leading-relaxed mb-4">
+                        Strategic roadmap outlining next steps, feature priorities, and growth opportunities for your product.
+                    </p>
+                    <ul class="space-y-2 text-sm text-off-white/60">
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-gold"></i>
+                            Feature development priorities
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-gold"></i>
+                            Market validation strategies
+                        </li>
+                        <li class="flex items-center gap-2">
+                            <i class="fas fa-check text-gold"></i>
+                            Scaling considerations
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: WhatYouReceive -->
+
+    <!-- Energy divider -->
+    <div class="energy-divider"></div>
+
+    <!-- @COMPONENT: WhyChoose [value propositions] -->
+    <section class="py-20 bg-deep-dark">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold mb-6">
+                    Why Choose <span class="text-gold">IdeaAlchemy</span>
+                </h2>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-gold/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-bolt text-gold text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">Speed That Matters</h3>
+                    <p class="text-off-white/70">Tangible results in under 7 days. No months of waiting—see your idea come to life fast.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-mystical-purple/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-dollar-sign text-mystical-purple text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">Affordable Validation</h3>
+                    <p class="text-off-white/70">Test your concept before investing big. Fixed pricing means no surprises or budget overruns.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-aqua-glow/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-crown text-aqua-glow text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">Clarity & Control</h3>
+                    <p class="text-off-white/70">You own the prototype and all the knowledge. Complete transparency in our process and deliverables.</p>
+                </div>
+                
+                <div class="text-center">
+                    <div class="bg-gold/10 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <i class="fas fa-unlock text-gold text-3xl"></i>
+                    </div>
+                    <h3 class="text-xl font-playfair font-bold mb-4">No Lock-In</h3>
+                    <p class="text-off-white/70">We give you the recipe, not just the result. Continue independently or work with any developer.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: WhyChoose -->
+
+    <!-- Energy divider -->
+    <div class="energy-divider"></div>
+
+    <!-- @COMPONENT: Pricing [two-tier pricing] -->
+    <section id="pricing" class="py-20 bg-card-bg/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold mb-6">
+                    Transform Your <span class="text-gold">Idea</span> Today
+                </h2>
+                <p class="text-xl text-off-white/80 max-w-2xl mx-auto">
+                    Choose the package that fits your needs. Both include everything you need to get started.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <!-- Prototype Package -->
+                <div class="bg-card-bg rounded-2xl p-8 border border-border-subtle glow-on-hover relative">
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Prototype Package</h3>
+                        <div class="text-5xl font-bold text-gold mb-4">$499</div>
+                        <p class="text-off-white/70">Perfect for validating your core concept</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-gold mt-1"></i>
+                            <span>One AI-powered MVP (no revisions)</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-gold mt-1"></i>
+                            <span>Complete Alchemist's Playbook & documentation</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-gold mt-1"></i>
+                            <span>Tool & service recommendations</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-gold mt-1"></i>
+                            <span>Clear roadmap with next steps</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-gold mt-1"></i>
+                            <span>Full code ownership</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-gold mt-1"></i>
+                            <span>7-day delivery guarantee</span>
+                        </li>
+                    </ul>
+                    
+                    <button data-analytics="cta-pricing-prototype" class="w-full bg-gold-gradient text-deep-dark py-4 rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-gold/25 transition-all duration-300">
+                        Start Your Prototype
+                    </button>
+                </div>
+                
+                <!-- Pro Package -->
+                <div class="bg-card-bg rounded-2xl p-8 border-2 border-gold glow-on-hover relative">
+                    <!-- Popular badge -->
+                    <div class="absolute -top-4 left-1/2 transform -translate-x-1/2">
+                        <span class="bg-gold text-deep-dark px-4 py-2 rounded-full text-sm font-semibold">Most Popular</span>
+                    </div>
+                    
+                    <div class="text-center mb-8">
+                        <h3 class="text-2xl font-playfair font-bold mb-2">Pro Package</h3>
+                        <div class="text-5xl font-bold text-gold mb-4">$899</div>
+                        <p class="text-off-white/70">Enhanced package with personal guidance</p>
+                    </div>
+                    
+                    <ul class="space-y-4 mb-8">
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-check text-gold mt-1"></i>
+                            <span><strong>Everything in Prototype Package</strong></span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-plus text-mystical-purple mt-1"></i>
+                            <span>One revision included</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-plus text-mystical-purple mt-1"></i>
+                            <span>30-minute walkthrough call</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-plus text-mystical-purple mt-1"></i>
+                            <span>Priority delivery</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-plus text-mystical-purple mt-1"></i>
+                            <span>Enhanced documentation</span>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-plus text-mystical-purple mt-1"></i>
+                            <span>Email support for 30 days</span>
+                        </li>
+                    </ul>
+                    
+                    <button data-analytics="cta-pricing-pro" class="w-full bg-gold-gradient text-deep-dark py-4 rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-gold/25 transition-all duration-300 animate-glow">
+                        Start Your Prototype
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Pricing -->
+
+    <!-- Energy divider -->
+    <div class="energy-divider"></div>
+
+    <!-- @COMPONENT: FAQ [accordion section] -->
+    <section id="faq" class="py-20 bg-deep-dark">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold mb-6">
+                    Frequently Asked <span class="text-gold">Questions</span>
+                </h2>
+            </div>
+            
+            <div class="max-w-3xl mx-auto space-y-6">
+                <!-- FAQ Item 1 -->
+                <div class="bg-card-bg rounded-xl border border-border-subtle">
+                    <button class="w-full p-6 text-left flex items-center justify-between faq-toggle" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold">What counts as an MVP?</span>
+                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <div class="pb-6 text-off-white/80">
+                            <p class="leading-relaxed">
+                                An MVP (Minimum Viable Product) is a functional prototype that demonstrates your core idea with the essential features needed to validate your concept. We build web applications with user interfaces, basic functionality, and AI integration where applicable—not just wireframes or designs.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 2 -->
+                <div class="bg-card-bg rounded-xl border border-border-subtle">
+                    <button class="w-full p-6 text-left flex items-center justify-between faq-toggle" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold">Do I own the code?</span>
+                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <div class="pb-6 text-off-white/80">
+                            <p class="leading-relaxed">
+                                Absolutely. You receive full ownership of all source code, documentation, and assets. There are no licensing restrictions—you're free to modify, distribute, or commercialize your prototype however you see fit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 3 -->
+                <div class="bg-card-bg rounded-xl border border-border-subtle">
+                    <button class="w-full p-6 text-left flex items-center justify-between faq-toggle" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold">Why no revisions in the base plan?</span>
+                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <div class="pb-6 text-off-white/80">
+                            <p class="leading-relaxed">
+                                We focus on getting the scope right upfront through our detailed intake process. This allows us to deliver quickly and affordably. The Pro package includes revisions for those who need iterative refinement, while the base package is perfect for validation and learning.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 4 -->
+                <div class="bg-card-bg rounded-xl border border-border-subtle">
+                    <button class="w-full p-6 text-left flex items-center justify-between faq-toggle" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold">Can you help finish the full product?</span>
+                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <div class="pb-6 text-off-white/80">
+                            <p class="leading-relaxed">
+                                While our core focus is rapid prototyping, we do offer continued development services for select projects. The roadmap we provide includes recommendations for extending your prototype, whether you choose to work with us, hire a developer, or build an in-house team.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- FAQ Item 5 -->
+                <div class="bg-card-bg rounded-xl border border-border-subtle">
+                    <button class="w-full p-6 text-left flex items-center justify-between faq-toggle" onclick="toggleFAQ(this)">
+                        <span class="text-lg font-semibold">What's your refund policy?</span>
+                        <i class="fas fa-chevron-down text-gold transition-transform duration-300"></i>
+                    </button>
+                    <div class="accordion-content px-6">
+                        <div class="pb-6 text-off-white/80">
+                            <p class="leading-relaxed">
+                                We offer a satisfaction guarantee. If we can't deliver a functional prototype that meets the agreed scope within 7 days, you get a full refund. Once work begins and deliverables are provided, refunds are evaluated case-by-case based on project-specific circumstances.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FAQ -->
+
+    <!-- Energy divider -->
+    <div class="energy-divider"></div>
+
+    <!-- @COMPONENT: Testimonials [future placeholder] -->
+    <section class="py-20 bg-card-bg/30">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl lg:text-5xl font-playfair font-bold mb-6">
+                    Success <span class="text-gold">Stories</span>
+                </h2>
+                <p class="text-xl text-off-white/80">Join the founders who've transformed their ideas into reality</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Testimonial Card 1 -->
+                <div class="bg-card-bg rounded-xl p-8 border border-gold/20 relative">
+                    <div class="absolute -top-3 -left-3 text-gold text-6xl opacity-30">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-off-white/80 mb-6 italic leading-relaxed">
+                        "IdeaAlchemy transformed my vague concept into a working prototype that impressed investors. The playbook was invaluable for our development team."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-gold/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-gold"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Sarah Chen</div>
+                            <div class="text-off-white/60 text-sm">Founder, TechStartup</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial Card 2 -->
+                <div class="bg-card-bg rounded-xl p-8 border border-mystical-purple/20 relative">
+                    <div class="absolute -top-3 -left-3 text-mystical-purple text-6xl opacity-30">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-off-white/80 mb-6 italic leading-relaxed">
+                        "In one week, I went from idea to a demo that helped me secure pre-orders. The speed and quality exceeded my expectations completely."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-mystical-purple/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-mystical-purple"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Marcus Rodriguez</div>
+                            <div class="text-off-white/60 text-sm">Entrepreneur</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Testimonial Card 3 -->
+                <div class="bg-card-bg rounded-xl p-8 border border-aqua-glow/20 relative">
+                    <div class="absolute -top-3 -left-3 text-aqua-glow text-6xl opacity-30">
+                        <i class="fas fa-quote-left"></i>
+                    </div>
+                    <p class="text-off-white/80 mb-6 italic leading-relaxed">
+                        "The clarity of documentation and roadmap made it easy to hand off to my development team. They delivered exactly what they promised."
+                    </p>
+                    <div class="flex items-center gap-4">
+                        <div class="w-12 h-12 bg-aqua-glow/20 rounded-full flex items-center justify-center">
+                            <i class="fas fa-user text-aqua-glow"></i>
+                        </div>
+                        <div>
+                            <div class="font-semibold">Jessica Park</div>
+                            <div class="text-off-white/60 text-sm">Product Manager</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: Testimonials -->
+
+    <!-- Energy divider -->
+    <div class="energy-divider"></div>
+
+    <!-- @COMPONENT: IdeaIntakeForm [main conversion form] -->
+    <section class="py-20 bg-deep-dark">
+        <div class="container mx-auto px-4">
+            <div class="max-w-2xl mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-4xl lg:text-5xl font-playfair font-bold mb-6">
+                        Share Your <span class="text-gold">Vision</span>
+                    </h2>
+                    <p class="text-xl text-off-white/80">
+                        Tell us about your idea and we'll confirm scope before work begins. No obligation.
+                    </p>
+                </div>
+                
+                <form class="bg-card-bg rounded-2xl p-8 border border-border-subtle space-y-6" id="idea-intake-form" data-mock="true">
+                    <!-- @STATE: formData:object = {} -->
+                    <!-- @STATE: isSubmitting:boolean = false -->
+                    <!-- @STATE: submitStatus:string = '' -->
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-off-white mb-2">What's your name? *</label>
+                        <input 
+                            type="text" 
+                            name="name"
+                            class="w-full bg-deep-dark border border-border-subtle rounded-lg px-4 py-3 text-off-white form-input transition-all duration-300" 
+                            placeholder="Your full name"
+                            required
+                            data-bind="formData.name"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-off-white mb-2">Email address *</label>
+                        <input 
+                            type="email" 
+                            name="email"
+                            class="w-full bg-deep-dark border border-border-subtle rounded-lg px-4 py-3 text-off-white form-input transition-all duration-300" 
+                            placeholder="your@email.com"
+                            required
+                            data-bind="formData.email"
+                        >
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-off-white mb-2">Describe your idea *</label>
+                        <textarea 
+                            name="idea"
+                            rows="4"
+                            class="w-full bg-deep-dark border border-border-subtle rounded-lg px-4 py-3 text-off-white form-input transition-all duration-300 resize-y" 
+                            placeholder="What problem does your idea solve? Who is your target audience? What are the main features you envision?"
+                            required
+                            data-bind="formData.idea"
+                        ></textarea>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-off-white mb-2">What type of AI integration interests you?</label>
+                        <select 
+                            name="aiType"
+                            class="w-full bg-deep-dark border border-border-subtle rounded-lg px-4 py-3 text-off-white form-input transition-all duration-300"
+                            data-bind="formData.aiType"
+                        >
+                            <option value="">Select an option...</option>
+                            <option value="nlp">Natural Language Processing (ChatGPT-like)</option>
+                            <option value="ml">Machine Learning / Prediction</option>
+                            <option value="vision">Computer Vision / Image Recognition</option>
+                            <option value="automation">Automation / Workflow AI</option>
+                            <option value="other">Other / Not sure</option>
+                        </select>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-off-white mb-2">What's your timeline? *</label>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="timeline" value="urgent" class="text-gold focus:ring-gold" required>
+                                <span>ASAP (within 1 week)</span>
+                            </label>
+                            <label class="flex items-center space-x-3 cursor-pointer">
+                                <input type="radio" name="timeline" value="normal" class="text-gold focus:ring-gold" required>
+                                <span>2-3 weeks is fine</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-off-white mb-2">Which package interests you? *</label>
+                        <div class="space-y-3">
+                            <label class="flex items-start space-x-3 cursor-pointer p-4 border border-border-subtle rounded-lg hover:border-gold/50 transition-colors">
+                                <input type="radio" name="package" value="prototype" class="text-gold focus:ring-gold mt-1" required>
+                                <div>
+                                    <div class="font-semibold">Prototype Package - $499</div>
+                                    <div class="text-sm text-off-white/70">Basic MVP with documentation and roadmap</div>
+                                </div>
+                            </label>
+                            <label class="flex items-start space-x-3 cursor-pointer p-4 border border-border-subtle rounded-lg hover:border-gold/50 transition-colors">
+                                <input type="radio" name="package" value="pro" class="text-gold focus:ring-gold mt-1" required>
+                                <div>
+                                    <div class="font-semibold">Pro Package - $899</div>
+                                    <div class="text-sm text-off-white/70">Everything above + revision + walkthrough call</div>
+                                </div>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        <label class="block text-sm font-medium text-off-white mb-2">Additional details (optional)</label>
+                        <textarea 
+                            name="additional"
+                            rows="3"
+                            class="w-full bg-deep-dark border border-border-subtle rounded-lg px-4 py-3 text-off-white form-input transition-all duration-300 resize-y" 
+                            placeholder="Any specific requirements, inspirations, or constraints we should know about?"
+                            data-bind="formData.additional"
+                        ></textarea>
+                    </div>
+                    
+                    <!-- Form status messages -->
+                    <div id="form-success" class="hidden bg-gold/10 border border-gold text-gold p-4 rounded-lg">
+                        <i class="fas fa-check-circle mr-2"></i>
+                        Thank you! We'll review your idea and get back to you within 24 hours to confirm scope and next steps.
+                    </div>
+                    
+                    <div id="form-error" class="hidden bg-red-500/10 border border-red-500 text-red-400 p-4 rounded-lg">
+                        <i class="fas fa-exclamation-triangle mr-2"></i>
+                        <span id="error-message">Something went wrong. Please try again or contact us directly.</span>
+                    </div>
+                    
+                    <button 
+                        type="submit" 
+                        data-analytics="cta-form-submit"
+                        data-event="click:handleFormSubmit"
+                        data-implementation="Should validate form, show loading state, and submit to backend"
+                        class="w-full bg-gold-gradient text-deep-dark py-4 rounded-xl font-semibold text-lg hover:shadow-lg hover:shadow-gold/25 transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                        id="submit-button"
+                    >
+                        <span id="button-text">Submit Your Idea</span>
+                        <i class="fas fa-spinner fa-spin ml-2 hidden" id="loading-spinner"></i>
+                    </button>
+                    
+                    <p class="text-sm text-off-white/60 text-center">
+                        By submitting, you agree to our 
+                        <a href="#" class="text-gold hover:underline">Privacy Policy</a> and 
+                        <a href="#" class="text-gold hover:underline">Terms of Service</a>
+                    </p>
+                </form>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: IdeaIntakeForm -->
+
+    <!-- Energy divider -->
+    <div class="energy-divider"></div>
+
+    <!-- @COMPONENT: FinalCTA [conversion section] -->
+    <section class="py-20 bg-mystical-gradient text-center">
+        <div class="container mx-auto px-4">
+            <div class="max-w-3xl mx-auto">
+                <h2 class="text-4xl lg:text-6xl font-playfair font-bold mb-6">
+                    Ready to Turn Your Idea Into <span class="text-gold">Gold</span>?
+                </h2>
+                <p class="text-xl text-off-white/90 mb-8 leading-relaxed">
+                    Submit your idea—no obligation. We'll confirm scope before work begins.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+                    <button data-analytics="cta-final-primary" class="bg-gold-gradient text-deep-dark px-10 py-5 rounded-xl font-semibold text-xl hover:shadow-lg hover:shadow-gold/25 transition-all duration-300 animate-glow">
+                        <i class="fas fa-magic mr-3"></i>
+                        Start Your Prototype
+                    </button>
+                    <a href="mailto:contact@ideaalchemy.com" class="text-off-white/80 hover:text-gold transition-colors flex items-center gap-2">
+                        <i class="fas fa-envelope"></i>
+                        Or email us directly
+                    </a>
+                </div>
+                
+                <p class="text-off-white/60 mt-8 text-lg">
+                    <i class="fas fa-clock mr-2"></i>
+                    Submit your idea—no obligation. We'll confirm scope before work begins.
+                </p>
+            </div>
+        </div>
+    </section>
+    <!-- @END_COMPONENT: FinalCTA -->
+
+    <!-- @COMPONENT: Footer [site footer] -->
+    <footer id="contact" class="bg-deep-dark border-t border-border-subtle py-16">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-12">
+                <div class="flex items-center justify-center space-x-2 mb-6">
+                    <i class="fas fa-flask text-gold text-3xl mystical-icon"></i>
+                    <span class="text-2xl font-playfair font-bold text-gold">IdeaAlchemy</span>
+                </div>
+                <p class="text-off-white/60 text-lg italic font-playfair">
+                    "Where ideas are transmuted into reality."
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
+                <div class="text-center">
+                    <h4 class="font-semibold text-gold mb-4">Contact</h4>
+                    <p class="text-off-white/80">
+                        <i class="fas fa-envelope mr-2"></i>
+                        contact@ideaalchemy.com
+                    </p>
+                </div>
+                
+                <div class="text-center">
+                    <h4 class="font-semibold text-gold mb-4">Legal</h4>
+                    <div class="space-y-2">
+                        <a href="#" class="block text-off-white/80 hover:text-gold transition-colors">Privacy Policy</a>
+                        <a href="#" class="block text-off-white/80 hover:text-gold transition-colors">Terms of Service</a>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <h4 class="font-semibold text-gold mb-4">Connect</h4>
+                    <div class="flex justify-center space-x-4">
+                        <a href="#" class="text-off-white/80 hover:text-gold transition-colors">
+                            <i class="fab fa-twitter text-xl"></i>
+                        </a>
+                        <a href="#" class="text-off-white/80 hover:text-gold transition-colors">
+                            <i class="fab fa-linkedin text-xl"></i>
+                        </a>
+                        <a href="#" class="text-off-white/80 hover:text-gold transition-colors">
+                            <i class="fab fa-github text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center pt-8 border-t border-border-subtle">
+                <p class="text-off-white/60">
+                    © 2024 IdeaAlchemy. All rights reserved.
+                </p>
+            </div>
+        </div>
+    </footer>
+    <!-- @END_COMPONENT: Footer -->
+
+    <!-- Scripts -->
+    <script>
+    (function() {
+        // TODO: Implement business logic, API calls, and state management
+        
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn?.addEventListener('click', function() {
+            mobileMenu?.classList.toggle('hidden');
+            const icon = this.querySelector('i');
+            icon?.classList.toggle('fa-bars');
+            icon?.classList.toggle('fa-times');
+        });
+        
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Form submission handler
+        const form = document.getElementById('idea-intake-form');
+        const submitButton = document.getElementById('submit-button');
+        const buttonText = document.getElementById('button-text');
+        const loadingSpinner = document.getElementById('loading-spinner');
+        const successMessage = document.getElementById('form-success');
+        const errorMessage = document.getElementById('form-error');
+        
+        form?.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Show loading state
+            submitButton.disabled = true;
+            buttonText.textContent = 'Submitting...';
+            loadingSpinner?.classList.remove('hidden');
+            successMessage?.classList.add('hidden');
+            errorMessage?.classList.add('hidden');
+            
+            // Collect form data
+            const formData = new FormData(form);
+            const data = Object.fromEntries(formData);
+            
+            try {
+                // TODO: Replace with actual API endpoint
+                const response = await fetch('/api/submit-idea', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(data)
+                });
+                
+                if (response.ok) {
+                    // Success
+                    successMessage?.classList.remove('hidden');
+                    form.reset();
+                    
+                    // Track conversion
+                    if (typeof gtag !== 'undefined') {
+                        gtag('event', 'form_submit', {
+                            event_category: 'engagement',
+                            event_label: 'idea_intake_form'
+                        });
+                    }
+                } else {
+                    throw new Error('Submission failed');
+                }
+            } catch (error) {
+                // Error handling
+                errorMessage?.classList.remove('hidden');
+                console.error('Form submission error:', error);
+            } finally {
+                // Reset button state
+                submitButton.disabled = false;
+                buttonText.textContent = 'Submit Your Idea';
+                loadingSpinner?.classList.add('hidden');
+            }
+        });
+        
+        // Form validation
+        const inputs = form?.querySelectorAll('input[required], textarea[required], select[required]');
+        inputs?.forEach(input => {
+            input.addEventListener('invalid', function() {
+                this.classList.add('border-red-500');
+            });
+            
+            input.addEventListener('input', function() {
+                if (this.validity.valid) {
+                    this.classList.remove('border-red-500');
+                }
+            });
+        });
+    })();
+    
+    // FAQ toggle function
+    function toggleFAQ(button) {
+        const content = button.nextElementSibling;
+        const icon = button.querySelector('i');
+        const isOpen = content.classList.contains('active');
+        
+        // Close all other FAQs
+        document.querySelectorAll('.accordion-content').forEach(item => {
+            item.classList.remove('active');
+        });
+        document.querySelectorAll('.faq-toggle i').forEach(item => {
+            item.style.transform = 'rotate(0deg)';
+        });
+        
+        if (!isOpen) {
+            content.classList.add('active');
+            icon.style.transform = 'rotate(180deg)';
+        }
+    }
+    
+    // Intersection Observer for animations
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+    
+    const observer = new IntersectionObserver(function(entries) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, observerOptions);
+    
+    // Apply fade-in animation to sections
+    document.querySelectorAll('section').forEach(section => {
+        section.style.opacity = '0';
+        section.style.transform = 'translateY(20px)';
+        section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(section);
+    });
+    </script>
+
+    <!-- 
+    README: IdeaAlchemy Landing Page Customization Guide
+    
+    ## Changing Branding:
+    1. Logo/Icon: Replace 'fas fa-flask' with your icon in header and footer
+    2. Company Name: Search and replace "IdeaAlchemy" throughout the document
+    3. Tagline: Update "Where ideas are transmuted into reality" in footer
+    4. Domain: Replace ideaalchemy.com in meta tags and contact email
+    
+    ## Changing Colors:
+    1. Update tailwind.config colors section:
+       - 'deep-dark': Background color
+       - 'gold': Primary accent color  
+       - 'mystical-purple': Secondary accent color
+       - 'aqua-glow': Tertiary accent color
+    2. Update gradient classes in CSS if needed
+    
+    ## Changing Pricing:
+    1. Update pricing section with your packages and prices
+    2. Modify form package options to match
+    3. Update FAQ content if pricing model changes
+    4. Adjust JSON-LD schema pricing information
+    
+    ## Form Backend Integration:
+    1. Replace '/api/submit-idea' with your actual endpoint
+    2. Implement server-side validation and email notifications
+    3. Add any additional fields needed for your intake process
+    4. Configure analytics tracking for form submissions
+    
+    ## SEO Optimization:
+    1. Update meta tags with your specific content
+    2. Replace placeholder og:image and twitter:image URLs
+    3. Customize JSON-LD schema with your business information
+    4. Add Google Analytics or other tracking codes
+    
+    ## Performance Optimization:
+    1. Optimize images and use appropriate formats (WebP recommended)
+    2. Implement lazy loading for images below the fold
+    3. Consider using a CDN for static assets
+    4. Minimize JavaScript and CSS where possible
+    -->
+</body>
+</html>
